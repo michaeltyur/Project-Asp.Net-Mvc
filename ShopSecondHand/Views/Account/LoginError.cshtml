@@ -1,0 +1,47 @@
+﻿@model ShopSecondHand.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Login Error";
+}
+<div class="main-container">
+    @*<div class="section-login">
+        @section Login
+    {
+            @Html.Action("Login", "Account")
+        }
+    </div>*@
+    <div class="page">
+        <div class="index-title"><h2>Login Error</h2></div>
+
+        <div class="registration-form-container login-error">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(false,"", new { @class = "text-danger" })
+
+                </div>
+            }
+        </div>
+
+        <div id="button-login-error">
+            <form method="post" action="@Url.Action("Index", "Home")">
+                <input type="submit" class="item-button" value="Back to Home" />
+            </form>
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </div>
+    <div class="section-ads">
+        @section Ads
+    {
+            @Html.Action("Ads", "Home")
+        }
+    </div>
+</div>
+
+

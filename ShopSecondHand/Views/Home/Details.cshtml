@@ -1,0 +1,116 @@
+﻿@model Models.Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="main-container">
+    @*<div class="section-login">
+            @section Login
+           {
+                @Html.Action("Login", "Account")
+            }
+        </div>*@
+
+    <div class="page">
+        <div class="index-title"><h2>@ViewBag.Title</h2></div>
+
+        <div class="item-box-details">
+            @{
+                var imgSrc = "";
+                var imgSrc2 = "";
+                var imgSrc3 = "";
+
+                if (Model.Image1 != null)
+                {
+                    var base64 = Convert.ToBase64String(Model.Image1);
+                    imgSrc = String.Format("data:image;base64,{0}", base64);
+                }
+                else
+                {
+                    imgSrc = "../../Images/No_Image_Available.jpg";
+                }
+                if (Model.Image2 != null)
+                {
+                    var base64 = Convert.ToBase64String(Model.Image2);
+                    imgSrc2 = String.Format("data:image;base64,{0}", base64);
+                }
+                else
+                {
+                    imgSrc2 = "../../Images/No_Image_Available.jpg";
+                }
+                if (Model.Image3 != null)
+                {
+                    var base64 = Convert.ToBase64String(Model.Image3);
+                    imgSrc3 = String.Format("data:image;base64,{0}", base64);
+                }
+                else
+                {
+                    //imgSrc = "~Models/Images/No_Image_Available.jpg";
+                    imgSrc3 = "../../Images/No_Image_Available.jpg";
+                }
+            }
+            <div class="div-details">
+
+                <h3 class="name">@Model.Name</h3>
+
+                <h5>&nbsp Date: @Model.TimeCreation.ToShortDateString()</h5>
+
+                <h4>&nbsp @Model.ShortDescription</h4>
+
+                <p>&nbsp @Model.LongDescription</p>
+
+                <div class="div-image-details">
+                    <div class="div-image-insite"><img class="image" src="@imgSrc" title="@Model.Name" alt="Picture" /></div>
+                    <div class="div-image-insite"><img class="image" src="@imgSrc2" title="@Model.Name" alt="Picture" /></div>
+                    <div class="div-image-insite"><img class="image" src="@imgSrc3" title="@Model.Name" alt="Picture" /></div>
+                </div>
+
+                <div class="div-price">&nbsp Price: $@Model.Price</div>
+
+                <div>&nbsp seller: @Model.Owner.FirstName&nbsp birthday: @Model.Owner.DOB.ToShortDateString() &nbsp @Model.Owner.PhoneNumber&nbsp email: @Model.Owner.Email</div>
+            </div>
+
+            <div class="index-link-outblock">
+                <div class="detail-link">
+                    <form method="post" id="signin" action="@Url.Action("Index", "Home")">
+                        <input type="submit" class="item-button" value="Back to Home" />
+                    </form>
+                </div>
+                <div class="buy-link">
+                    @if (Model.ItemState == Models.State.in_cart)
+                    {
+                        <form method="post" action="@Url.Action("Cart", "Cart")" onclick="return confirm('This item is allredy in your cart')">
+                            <input type="submit" class="item-button" value="Add to Cart" />
+                        </form>
+                    }
+                    else if (User.Identity.Name == Model.Owner.UserName)
+                    {
+                        <form method="post" action="@Url.Action("EditItem", "Home", new { id = Model.ItemId })">
+                            <input type="submit" class="item-button" value="Update Item" />
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" action="@Url.Action("AddToCart", "Cart", new { id = Model.ItemId })">
+                            <input type="submit" class="item-button" value="Add to Cart" />
+                        </form>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-ads">
+        @section Ads
+    {
+            @Html.Action("Ads", "Ads")
+        }
+    </div>
+</div>
+
+
+
+
+
+

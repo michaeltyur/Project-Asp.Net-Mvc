@@ -1,0 +1,109 @@
+﻿@model IEnumerable<ShopSecondHand.Models.CartViewModel>
+
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <script>
+       alert("@ViewBag.Message");
+   </script>
+}
+
+<div class="main-container">
+    @*<div class="section-login">
+        @section Login
+        {
+            @Html.Action("Login", "Account")
+        }
+    </div>*@
+    <div class="page">
+        <div class="index-title"><h2>@ViewBag.Title</h2></div>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="discount-message"><h3>You have a 10% discount price !</h3></div>
+        }
+        else
+        {
+            <div class="discount-message"><h3>Sign up and get a 10% discount!</h3></div>
+        }
+        <div class="cart-outside-div">
+            <div class="cart-inside-div">
+                <table class="table cart">
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.ItemId }) |
+                                @Html.ActionLink("Remove", "DeleteFromCart", new { id = item.ItemId })
+                            </td>
+                        </tr>
+                    }
+                </table>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="discount-message">
+                        <h4>
+                            Total Price
+                            <span class="price">
+                                @ShopSecondHand.Extension.CartMethodExtention.TotalPrice(User.Identity.Name)
+                            </span>
+                            <br />
+                            <br />
+                            @if (ShopSecondHand.Extension.CartMethodExtention.ItemsInCart(User.Identity.Name) > 0)
+                            {
+                                <span class="reminder">You have a 10% discount :)</span>
+                            }
+                        </h4>
+                    </div>
+                }
+                else
+                {
+                    <div class="discount-message">
+                        <h4>
+                            Total Price
+                            <span class="price">
+                                @ShopSecondHand.Extension.CartMethodExtention.TotalPrice(User.Identity.Name)
+                            </span>
+                            <br />
+                            <br />
+                            @if (ShopSecondHand.Extension.CartMethodExtention.ItemsInCart(User.Identity.Name) > 0)
+                            {
+                                <span class="reminder">but you could get a discount :(</span>
+                            }
+                        </h4>
+                    </div>
+                }
+            </div>
+            <div>
+                @using (Html.BeginForm("CheckOut", "Cart", FormMethod.Post, new { @class = "button-form" }))
+                {
+                    <input type="submit" class="item-button buy-button" value="Check Out" onclick="return confirm('We thank you for your purchase')" />
+                }
+            </div>
+        </div>
+    </div>
+    <div class="section-ads">
+        @section Ads
+        {
+            @Html.Action("Ads", "Ads")
+        }
+    </div>
+</div>
+
+
+
+
+

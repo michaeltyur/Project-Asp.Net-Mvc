@@ -1,0 +1,85 @@
+﻿.user-container {
+    background-image: url('/Images/top_bar.jpg');
+    width: 200px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-around;*/
+    top: 70px;
+    border: 2px groove grey;
+    border-radius: 5px;
+    background-color: darkgray;
+    padding: 15px 0 15px 0;
+    text-align:center;
+}
+.in-div {
+    text-align: center;
+    margin: auto 10px auto 10px;
+    border-radius: 5px;
+    padding: 2px;
+}
+.in-div.greeting {
+  width:80%;
+  min-height:40px;
+  margin: auto;
+  color:chocolate;
+  padding:3px;
+}
+.in-div.guest-buttons {
+        margin-top: 30px;
+    }
+/*Cart Info*/
+.cart-info {
+    margin: 15px auto 5px auto;
+    border: 1px groove grey;
+    border-radius: 5px;
+    background-color: darkgrey;
+    /*background-image: url('/Images/cart.jpg');
+    background-size: 100% ;*/
+}
+.cart-info h4{
+    color:brown;
+    padding:5px;
+}
+    /*Login buttons*/
+.login {
+   margin: auto;
+   padding: 10px;
+   border-radius: 5px;
+}
+.buttons-login:hover {
+    color: #fff;
+    background: #333;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+}
+.user-button 
+{
+    border-radius: 5px;
+    border: 2px groove grey;
+    
+}
+
+#ad-button {
+    width: 130px;
+    height: 70px;
+    padding: 10px;
+    text-align: center;
+}
+.greeting {
+    border: 1px groove grey;
+    padding:3px;
+}
+
+/*Login Error*/
+.registration-form-container.login-error{
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
+}
+
+#button-login-error{
+    margin-left:45%;
+    margin-top:30px;
+}

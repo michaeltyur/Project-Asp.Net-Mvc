@@ -1,0 +1,48 @@
+﻿body {
+    height: 100%;
+}
+
+.bar-button.bar-button-mystyle {
+    background-color: dimgrey;
+}
+
+.registration-form-container {
+    margin-top:20px;
+    border: 2px groove dimgrey;
+    border-radius: 10px;
+    padding:10px;
+}
+.registration-form-container h4{
+    margin-left: 30px;
+}
+
+/*ABOUT*/
+
+
+.about-image {
+    width: 200px;
+    height: 180px;
+    border-radius: 20px;
+    padding:10px;
+}
+#about-image1 {
+    margin-right: 15px;
+    margin-bottom:10px;
+    float: left;
+}
+
+#about-image2 {
+    margin-left:10px;
+    float: right;
+}
+
+#about-image3 {
+    float: left;
+    margin-right:15px;
+    margin-top:10px;
+}
+
+.registration-form-container.about p{
+    margin:5px;
+}
+

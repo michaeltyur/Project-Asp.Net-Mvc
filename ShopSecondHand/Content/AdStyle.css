@@ -1,0 +1,19 @@
+﻿/*.warning{
+    margin-left:30px;
+    padding:30px;
+    text-align:center;
+}*/
+.form-horizontal h4{
+    font-weight:bold;
+}
+.form-horizontal p {
+    margin-left: 20px;
+    color: red;
+}
+
+.mini-image {
+    width: 280px;
+    height: 220px;
+    border: 2px groove gray;
+    border-radius: 5px;
+}

@@ -1,0 +1,127 @@
+﻿@media screen and (max-width:1300px) and (min-width:1000px) {
+    /*TITLES*/
+    .bar-title-left {
+       left:10px;
+       top:12px;
+    }
+    .bar-title-right {
+        right: 13px;
+        top: 14px;
+    }
+
+    .bar-title-left h3
+    {
+        font-size:large;
+    }
+
+    .bar-title-right h3 {
+        font-size:13px;
+    }
+    
+    .page {
+        width: 750px;
+        margin: auto;
+    }
+    .sortbuttons-container 
+    {
+        width:400px;
+        margin: auto;
+    }
+    #sortbuttons-byname {
+        margin: auto;
+    }
+    #sortbuttons-bydate {
+        margin: auto;
+    }
+    .my-container {
+        width: 610px;
+        margin: auto;
+    }
+
+    /*Second Layout*/
+    .bar-title-custom-layout-left {
+        /*display:inline-block;*/
+        position:absolute;
+        right:25px;
+        top:10px;
+    }
+
+    .bar-title-custom-layout-left h3{
+        font-size:20px;
+    }
+
+    .bar-title-custom-layout-right {
+        left: 8px;
+        top: 12px;
+    }
+        .bar-title-custom-layout-right h3 {
+            font-size: 16px;
+    }
+}
+
+@media screen and  (max-width:1000px) {
+
+    /*TITLES*/
+    .bar-title-left {
+        left: 10px;
+        top: 12px;
+    }
+
+    .bar-title-right {
+        right: 10px;
+        top: 12px;
+    }
+
+    .bar-title-left h3 {
+        font-size: medium;
+    }
+
+    .bar-title-right h3 {
+        font-size: small;
+    }
+
+
+    .page {
+        width: 450px;
+        margin: auto;
+    }
+
+    .sortbuttons-container {
+        width: 400px;
+        margin: auto;
+    }
+
+    #sortbuttons-byname {
+        margin: auto;
+    }
+
+    #sortbuttons-bydate {
+        margin: auto;
+    }
+
+    .my-container {
+        width: 310px;
+        margin: auto;
+    }
+
+    /*Second Layout*/
+    .bar-title-custom-layout-left {
+        position: absolute;
+        right: 3px;
+        top: 15px;
+    }
+
+    .bar-title-custom-layout-left h3 {
+        font-size: 14px;
+    }
+
+    .bar-title-custom-layout-right {
+        left: 0;
+        top: 19px;
+    }
+
+        .bar-title-custom-layout-right h3 {
+            font-size: 9px;
+        }
+
+}

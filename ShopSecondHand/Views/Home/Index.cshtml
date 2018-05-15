@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ShopSecondHand.Models.ItemViewModel>
+@{
+    ViewBag.Title = "Home";
+    ViewBag.ButtonColor = "#3c1d06";
+}
+<div class="main-container">
+    @*<div class="section-login">*@
+    @*@section Login
+        {
+             @Html.Action("Login", "Account")
+         }*@
+    @*</div>*@
+    <div class="page">
+        <div class="index-title"><h2>Only Proven Things</h2></div>
+        <div>
+        <div class="sortbuttons-container">
+            <div id="sortbuttons-byname">
+                <form method="post" action="@Url.Action("SortByName", "Home")">
+                    <input type="submit" class="item-button" value="Sort by Name" />
+                </form>
+            </div>
+            <div id="sortbuttons-bydate">
+                <form method="post" action="@Url.Action("SortBydate", "Home")">
+                    <input type="submit" class="item-button" value="Sort by Date" />
+                </form>
+            </div>
+        </div>
+
+        </div>
+        <div class="my-container">
+            @foreach (var item in Model)
+            {
+                Html.RenderPartial("Item", item);
+            }
+        </div>
+    </div>
+    @*<div class="section-ads">*@
+    @section Ads
+    {
+        @Html.Action("Ads", "Ads")
+    }
+    @*</div>*@
+</div>
+

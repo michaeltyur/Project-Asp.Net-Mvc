@@ -1,0 +1,146 @@
+﻿@model Models.Item
+
+@{
+    ViewBag.Title = "Add an advert";
+}
+
+<script>
+    function changeItem(element) {
+        $('#image1').attr('src', element.value);
+    }
+    function changeArtist(element) {
+        $('#image2').attr('src', element.value);
+    }
+    function changeArtist(element) {
+        $('#image3').attr('src', element.value);
+    }
+</script>
+
+<div class="main-container">
+    <div class="page">
+        <div class="index-title"><h2>@ViewBag.Title</h2></div>
+
+        <div class="registration-form-container">
+
+            @*<div class="">
+
+                </div>*@
+            @using (Html.BeginForm(Html.BeginForm("Ad", "Home", FormMethod.Post,
+                                                    new { enctype = "multipart/form-data", role = "form" })))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>New advert</h4>
+                    <hr />
+                    <p>* fields are required</p>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @Value = "*" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", @Value = "*" } })
+                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ShortDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control", @Value = "*" } })
+                            @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LongDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.LongDescription, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LongDescription, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+
+                    @*Image1*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => Model.Image1, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <br />
+                            @{
+                                var imgSrc1 = "";
+                                if (Model.Image1 != null)
+                                {
+                                    var base64 = Convert.ToBase64String(Model.Image1);
+                                    imgSrc1 = String.Format("data:image;base64,{0}", base64);
+                                }
+                                else
+                                {
+                                    imgSrc1 = "../../Images/No_Image_Available.jpg";
+                                }
+                            }
+                            <img src="@imgSrc1" id="image1" class="mini-image" />
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Image1, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @*<label for="file">Upload Image:</label>*@
+                            @Html.ValidationMessage("file")
+                            <input type="file" name="files" id="file" style="width: 100%;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Image2, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @*<label for="file">Upload Image:</label>*@
+                            @Html.ValidationMessage("file")
+                            <input type="file" name="files" id="file" style="width: 100%;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Image3, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @*<label for="file">Upload Image:</label>*@
+                            @Html.ValidationMessage("file")
+                            <input type="file" name="files" id="file" style="width: 100%;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Advertising" class="btn btn-default" onclick="return confirm('Do you want to add the advert and back to Home page?')" />
+                        </div>
+                    </div>
+                </div>
+                                }
+
+            <div>
+                <form method="post" action="@Url.Action("Index", "Home")">
+                    <input type="submit" class="item-button" value="Back to Home" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="section-ads">
+    @section Ads
+    {
+        @Html.Action("Ads", "Home")
+    }
+</div>
+

@@ -1,0 +1,93 @@
+﻿@model ShopSecondHand.Models.LoginViewModel
+@using ShopSecondHand.Extension
+
+@{
+    ViewBag.Title = "Guest";
+}
+
+<div class="user-container">
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <div class="greeting in-div">
+            <h4>@Html.Greeting(),@ViewBag.Title</h4>
+        </div>
+        @*<div class="registration-button">
+                <form method="get" id="registration" action="@Url.Action("Registration", "Account")">
+                    <input type="submit" class="login buttons-login" value="Registration" />
+                </form>
+            </div>*@
+
+        <div class="cart-info">
+            <a href="@Url.Action("Cart", "Home")" role="button" class="cart-link">
+                <h4>
+                    In the Cart @ShopSecondHand.Extension.CartMethodExtention.ItemsInCart(User.Identity.Name) items
+                </h4>
+            </a>
+        </div>
+        <div class="form in-div">
+            @using (Html.BeginForm("Login", "Account"))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="in-div">
+                    @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="in-div">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="in-div guest-buttons">
+                    <input type="submit" value="Log In" class="btn btn-default buttons-login" />
+                </div>
+            }
+
+            <div class="in-div guest-buttons">
+                <form method="get" action="@Url.Action("Registration", "Account")">
+                    <input type="submit" class="btn btn-default buttons-login" value="Registration" />
+                </form>
+            </div>
+
+        </div>
+
+
+
+    }
+    else
+    {
+        <div class="greeting in-div">
+            <h4>@Html.Greeting(), @User.Identity.Name</h4>
+        </div>
+        <div class="cart-info">
+            <a href="@Url.Action("Cart", "Home")" role="button" class="cart-link">
+                <h4>
+                    In the Cart @ShopSecondHand.Extension.CartMethodExtention.ItemsInCart(User.Identity.Name) items
+                </h4>
+            </a>
+        </div>
+
+        <div id="ad-button-div" class="login">
+            <form method="get"  action="@Url.Action("Ad", "Home")">
+                <input type="submit" class="login buttons-login" value="Add Advert" />
+            </form>
+        </div>
+
+        <div id="ad-button-div" class="login">
+            <form method="get" action="@Url.Action("EditUser", "Account")">
+                <input type="submit" class="login buttons-login" value="Personal Area" />
+            </form>
+        </div>
+
+        <div id="logout-button-div" class="login">
+            <form method="post" id="signin" action="@Url.Action("Logout", "Account")">
+                <input type="submit" class="login buttons-login" value="Sign Out" />
+            </form>
+        </div>
+    }
+
+</div>

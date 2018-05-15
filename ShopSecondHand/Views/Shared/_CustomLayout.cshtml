@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="bar-fixed-top">
+        <div class="bar-buttons-container">
+            <div class="bar-title-custom-layout-right"><h3>God Created Men and Sam Colt Made Them Equal</h3></div>
+            <div class="bar-button" id="cart-button" style="background-color:@ViewBag.CartButtonColor">@Html.ActionLink("Cart", "Cart", "Cart")</div>
+            <div class="bar-button" id="about-button" style="background-color:@ViewBag.AboutButtonColor">@Html.ActionLink("About Us", "About", "Home")</div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="bar-button" id="personal-area-button" style="background-color:@ViewBag.UserButtonColor">@Html.ActionLink("Personal Area", "EditUser", "Account")</div>
+            }
+            else
+            {
+                <div class="bar-button" id="registration-button" style="background-color:@ViewBag.UserButtonColor">@Html.ActionLink("Registration", "Registration", "Account")</div>
+            }            <div class="bar-button" id="home-button" style="background-color:@ViewBag.HomeButtonColor">@Html.ActionLink("Home", "Index", "Home")</div>
+            <div class="bar-title-custom-layout-left"><h3>Things with a story - @ViewBag.Title</h3></div>
+        </div>
+    </div>
+
+    <div class="user-box-custom-layout">
+        @Html.Partial("/Views/Account/Login.cshtml", new ShopSecondHand.Models.LoginViewModel())
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @*<div class="ads-layout-container">
+            @RenderSection("Ads", false)
+        </div>*@
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @*<hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Second Hand Shop </p>
+        </footer>*@
+</body>
+</html>
