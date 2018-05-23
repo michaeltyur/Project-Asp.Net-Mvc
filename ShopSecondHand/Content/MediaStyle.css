@@ -1,4 +1,4 @@
-﻿@media screen and (max-width:1300px) and (min-width:1000px) {
+﻿@media screen and (max-width:1500px) and (min-width:1050px) {
     /*TITLES*/
     .bar-title-left {
        left:10px;
@@ -59,7 +59,7 @@
     }
 }
 
-@media screen and  (max-width:1000px) {
+@media screen and  (max-width:1050px) {
 
     /*TITLES*/
     .bar-title-left {
@@ -103,7 +103,9 @@
         width: 310px;
         margin: auto;
     }
-
+    .bar-buttons-container h3{
+        visibility:collapse;
+    }
     /*Second Layout*/
     .bar-title-custom-layout-left {
         position: absolute;

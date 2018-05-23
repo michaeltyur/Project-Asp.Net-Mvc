@@ -27,13 +27,13 @@ namespace DAL.DBInitializer
                 DOB =new DateTime(1980,01,10) };
             users.Add(admin);
 
-            User superAdmin = new User { UserName = "super_admin", FirstName = "Michael", LastName = "Bobov", Password = "777", PasswordConfirm = "777", Email = "mashak@sela.co.il", DOB = new DateTime(1979, 01, 05) };
+            User superAdmin = new User { UserName = "super_admin", FirstName = "Michael", LastName = "Bobov", Password = "777", PasswordConfirm = "777", Email = "michael@gmail.com", DOB = new DateTime(1979, 01, 05) };
             users.Add(superAdmin);
 
-            User user1 = new User { UserName = "bob",  FirstName = "Bob", LastName = "Silent", Password = "12345", PasswordConfirm = "12345", Email = "mashak@sela.co.il", DOB = new DateTime(1989, 10, 04) };
+            User user1 = new User { UserName = "bob",  FirstName = "Bob", LastName = "Silent", Password = "12345", PasswordConfirm = "12345", Email = "bob@hotmail.co.il", DOB = new DateTime(1989, 10, 04) };
             users.Add(user1);
 
-            User user2 = new User { UserName = "jay",  FirstName = "Jay", LastName = "Pupkin", Password = "54321", PasswordConfirm = "54321", Email = "mashak@sela.co.il", DOB = new DateTime(1969, 01, 04) };
+            User user2 = new User { UserName = "jay",  FirstName = "Jay", LastName = "Pupkin", Password = "54321", PasswordConfirm = "54321", Email = "jay@yandex.com", DOB = new DateTime(1969, 01, 04) };
             users.Add(user1);
 
             #endregion
@@ -196,6 +196,19 @@ namespace DAL.DBInitializer
                 Image1 = ImageToByteArray.ImageByteArray("1.jpg", 12),
                 Image2 = ImageToByteArray.ImageByteArray("2.jpg", 12),
                 Image3 = ImageToByteArray.ImageByteArray("3.jpg", 12)
+            });
+            items.Add(new Item
+            {
+                ItemId = 13,
+                Name = "MP 40",
+                ShortDescription = "Maschinenpistole 40",
+                Price = 2999,
+                LongDescription = "The MP 40 (Maschinenpistole 40) was a submachine gun chambered for the 9×19mm Parabellum cartridge. It was developed in Nazi Germany and used extensively by the Axis powers during the Second World War",
+                Owner = superAdmin,
+                TimeCreation = new DateTime(2018, 01, 01),
+                Image1 = ImageToByteArray.ImageByteArray("1.jpg", 13),
+                Image2 = ImageToByteArray.ImageByteArray("2.jpg", 13),
+                Image3 = ImageToByteArray.ImageByteArray("3.jpg", 13)
             });
             #endregion
 

@@ -94,7 +94,7 @@ namespace ShopSecondHand.Controllers
                 HttpContext.Application.UnLock();
 
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Cart");
         }
 
         //Remove item from items for buy and sending email to seller
@@ -157,7 +157,7 @@ namespace ShopSecondHand.Controllers
                     }
                 }
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
 
         }
 

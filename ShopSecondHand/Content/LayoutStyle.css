@@ -45,7 +45,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
-
+.bar-buttons-container
 #personal-area-button {
     width: 120px;
 }
