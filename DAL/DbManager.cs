@@ -12,8 +12,6 @@ namespace DAL
     {
         ShopDbContext context;
 
-
-
         ItemRepository itemRepository;
 
         UserRepository userRepository;
