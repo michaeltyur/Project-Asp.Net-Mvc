@@ -4,13 +4,13 @@
     min-height: 600px;
     display: flex;
     flex-direction: column;
-    /*justify-content: space-around;*/
+    margin-top: -35px;
     top: 70px;
     border: 2px groove grey;
     border-radius: 5px;
     background-color: darkgray;
     padding: 15px 0 15px 0;
-    text-align:center;
+    text-align: center;
 }
 .in-div {
     text-align: center;
