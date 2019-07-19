@@ -2,15 +2,15 @@
 .ads-container {
     /*background-image: url('/Images/top_bar.jpg');*/
     width: 200px;
-    height: 600px;
+    height: 53rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-top: -35px;
+    /*margin-top: -35px;*/
     border: 4px groove grey;
     border-radius: 10px;
     background-color: darkgray;
-    padding: 15px 0 15px 0;
+    padding: 5px 0 5px 0;
     text-align: center;
 }
 .ads-container h3 {

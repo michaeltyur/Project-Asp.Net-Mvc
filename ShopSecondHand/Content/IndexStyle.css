@@ -27,22 +27,27 @@
     border-radius: 10px;
     background-image: url('/Images/title.jpg');
     opacity: 0.7;
+    margin-top: 3rem;
 }
-.index-title h2{
-    color:burlywood;
-}
-/*Sort Buttons*/
-    .sortbuttons-container {
-        display: flex;
-        flex-direction: row;
-        padding: 5px;
+
+    .index-title h2 {
+        color: burlywood;
     }
-#sortbuttons-byname{
-    margin:0 0 0 30px;
+/*Sort Buttons*/
+.sortbuttons-container {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
 }
+
+#sortbuttons-byname {
+    margin: 0 0 0 30px;
+}
+
 #sortbuttons-bydate {
     margin: 0 0 0 40px;
 }
+
 .item-button:hover {
     color: #fff;
     background: #333;
@@ -50,5 +55,3 @@
     -webkit-transition: all .3s linear;
     -moz-transition: all .3s linear;
 }
-
-

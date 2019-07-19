@@ -18,15 +18,15 @@ function start () {
 
 function slideshow()
 {
-    var firstImage = document.getElementById("first-image");
-    var secondImage = document.getElementById("second-image");
-    var thirdImage = document.getElementById("third-image");
+    let firstImage = document.getElementById("first-image");
+    let secondImage = document.getElementById("second-image");
+    let thirdImage = document.getElementById("third-image");
    
 
     //var value = firstImage.attributes["value"].value
 
-    var src = firstImage.src;
-    var value = firstImage.attributes["value"].value;
+    let src = firstImage.src;
+    let value = firstImage.attributes["value"].value;
 
     firstImage.src = secondImage.src;
     firstImage.attributes["value"].value = secondImage.attributes["value"].value

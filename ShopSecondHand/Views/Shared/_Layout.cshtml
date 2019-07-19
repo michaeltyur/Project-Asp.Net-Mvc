@@ -10,19 +10,47 @@
 <body>
     <div class="bar-fixed-top">
         <div class="bar-buttons-container">
-            <div class="bar-title-left"><h3>Legendary Weapons - @ViewBag.Title</h3></div>
-            <div class="bar-button" id="home-button" style="background-color:@ViewBag.HomeButtonColor">@Html.ActionLink("Home", "Index", "Home")</div>
+            <div class="bar-title-left">
+               <h3>
+                 Legendary Weapons - @ViewBag.Title
+               </h3>
+            </div>
+            <div class="bar-button" 
+                 id="home-button" 
+                 style="background-color:@ViewBag.HomeButtonColor">
+                   @Html.ActionLink("Home", "Index", "Home")
+            </div>
             @if (User.Identity.IsAuthenticated)
             {
-                <div class="bar-button" id="personal-area-button" style="background-color:@ViewBag.UserButtonColor">@Html.ActionLink("Personal Area", "EditUser", "Account")</div>
+                <div class="bar-button" 
+                     id="personal-area-button" 
+                     style="background-color:@ViewBag.UserButtonColor">
+                       @Html.ActionLink("Personal Area", "EditUser", "Account")
+                </div>
             }
             else
             {
-                <div class="bar-button" id="registration-button" style="background-color:@ViewBag.UserButtonColor">@Html.ActionLink("Registration", "Registration", "Account")</div>
+                <div class="bar-button" 
+                     id="registration-button" 
+                     style="background-color:@ViewBag.UserButtonColor">
+                        @Html.ActionLink("Registration", "Registration", "Account")
+                </div>
             }
-            <div class="bar-button" id="about-button" style="background-color:@ViewBag.AboutButtonColor">@Html.ActionLink("About Us", "About", "Home")</div>
-            <div class="bar-button" id="cart-button" style="background-color:@ViewBag.CartButtonColor">@Html.ActionLink("Cart", "Cart", "Cart")</div>
-            <div class="bar-title-right"><h3>God Created Men and Sam Colt Made Them Equal</h3></div>
+            <div class="bar-button" 
+                 id="about-button" 
+                 style="background-color:@ViewBag.AboutButtonColor">
+                    @Html.ActionLink("About Us", "About", "Home")
+            </div>
+            <div class="bar-button" 
+                 id="cart-button" 
+                 style="background-color:@ViewBag.CartButtonColor">
+                   @Html.ActionLink("Cart", "Cart", "Cart")
+            </div>
+            <div class="bar-title-right">
+              <h3>
+                God Created Men and Sam Colt Made Them Equal
+              </h3>
+            </div>
         </div>
     </div>
     <div class="user-box">

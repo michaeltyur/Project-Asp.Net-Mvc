@@ -13,7 +13,7 @@ namespace DAL
     {
         public ShopDbContext():base("ShopDB")
         {
-            Database.SetInitializer(new ShopDBInitializer());
+            //Database.SetInitializer(new ShopDBInitializer());
 
         }
         public DbSet<User> Users { get; set; }
